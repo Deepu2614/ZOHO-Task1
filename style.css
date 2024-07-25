@@ -180,6 +180,8 @@ body {
     background-color: #35353580;
     box-shadow: none;
     cursor: not-allowed;
+    color: #c1c1c1;
+
 }
 
 #main>form>button:hover{
