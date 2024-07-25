@@ -5,8 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
-    
+    <div id="container">
+        <div id="main">
+            <h1>Create Your Account</h1>
+            <form>
+                <div id="content">
+                    <div class="group" id="personal-information">
+                        <h2>Personal Information</h2>
+                        <div id="input-group">
+                            <div class="input-field">
+                                <label for="">Full name</label>
+                                <div id="input-container">
+                                    <input type="text" id="full-name" placeholder="Eg. Your Name">
+                                    <span class="material-icons">error_outline</span>
+                                    <div class="error-field"> is not valid !!</div>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Email</label>
+                                <div id="input-container">
+                                    <input type="email" id="email" placeholder="Eg. your.mail.id@email.com">
+                                    <span class="material-icons">error_outline</span>
+                                    <div class="error-field"> is not valid !!</div>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Date of birth</label>
+                                <div id="input-container">
+                                    <input type="date" id="date-of-birth">
+                                    <span class="material-icons">error_outline</span>
+                                    <div class="error-field"> is not valid !!</div>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Mobile number</label>
+                                <div id="input-container">
+                                    <input type="text" id="mobile-number" placeholder="Eg. 9344068129">
+                                    <span class="material-icons">error_outline</span>
+                                    <div class="error-field"> is not valid !!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group" id="password-and-pin">
+                        <h2>Password & Pin</h2>
+                        <div id="input-group">
+                            <div class="input-fields">
+                                
+                            </div>
+                            <div class="input-fields"></div>
+                        </div>
+                    </div>
+                </div>
+                <button disabled>Sign-up</button>
+            </form>
+        </div>
+        <div id="divider"></div>
+        <div id="footer"></div>
+    </div>
 </body>
 </html>

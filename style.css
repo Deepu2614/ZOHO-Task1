@@ -1,3 +1,10 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     padding: 2vw 0vw;
     background-image: url(images/bg.png);
@@ -6,4 +13,138 @@ body {
     justify-content: center;
     font-family: sans-serif;
     letter-spacing: 0.02em;
+}
+
+#container{
+    background-color: rgba(248, 248, 248, 0.7);
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    padding: 2vw 3vw 2vw 3vw;
+    width: 35%;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+#main>h1{
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+#main>form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+#main>form>#content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+#content>.group{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25vw;
+}
+
+#content>.group>h2{
+    color: #353535;
+    font-size: 0.95vw;
+    text-align: left;
+}
+
+#content>.group>#input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+#input-group>.input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35vw;
+}
+
+#input-group>.input-field>label{
+    color: #353535;
+    font-size: 0.75vw;
+}
+
+#input-group>.input-field>#input-container{
+    position: relative;
+}
+
+/* /input */
+#input-container>input{
+    padding: 0.5vw 0.8vw;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    font-size: 0.8vw;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.125);
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: rgb(255 255 255 / 15%);
+}
+
+#input-container>input:focus{
+    border: 1px solid #4444444f;
+    background-color: rgb(214, 214, 214);
+}
+#input-container>input:hover{
+    cursor: text;
+    background-color: rgba(214, 214, 214, 0.878);
+}
+/* /input */
+
+#input-container>span{
+    font-size: 17px;
+    position: absolute;
+    top: 30%;
+    right: 3%;
+    visibility: hidden;
+}
+
+#input-container>.error-field{
+    font-size: 12px;
+    position: absolute;
+    bottom: -50%;
+    right: 0%;
+    visibility: hidden;
+}
+
+#main>form>button{
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    background-color: #212121;
+    color: #f8f8f8;
+    padding: 0.5rem 0px;
+    outline: none;
+    border: none;
+    border-radius: 0.3125rem;
+    transition-duration: 300ms;
+    transition-property: background-color;
+}
+
+#main>form>button:disabled, #main>form>button:disabled:hover{
+    background-color: #35353580;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+#main>form>button:hover{
+    box-shadow: 0px 0px 20px 5px rgba(78, 78, 78, 0.4);
+    transition-timing-function: ease-in;
+}
+
+#main>form>button:active{
+    box-shadow: none;
 }
