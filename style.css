@@ -1,0 +1,9 @@
+body {
+    padding: 2vw 0vw;
+    background-image: url(images/bg.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    letter-spacing: 0.02em;
+}
