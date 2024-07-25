@@ -22,7 +22,7 @@
                                 <div id="input-container">
                                     <input type="text" id="full-name" placeholder="Eg. Your Name">
                                     <span class="material-icons">error_outline</span>
-                                    <div class="error-field"> is not valid !!</div>
+                                    <div class="error-field">full name is not valid !!</div>
                                 </div>
                             </div>
                             <div class="input-field">
@@ -30,7 +30,7 @@
                                 <div id="input-container">
                                     <input type="email" id="email" placeholder="Eg. your.mail.id@email.com">
                                     <span class="material-icons">error_outline</span>
-                                    <div class="error-field"> is not valid !!</div>
+                                    <div class="error-field">email is not valid !!</div>
                                 </div>
                             </div>
                             <div class="input-field">
@@ -38,7 +38,7 @@
                                 <div id="input-container">
                                     <input type="date" id="date-of-birth">
                                     <span class="material-icons">error_outline</span>
-                                    <div class="error-field"> is not valid !!</div>
+                                    <div class="error-field">date is not valid !!</div>
                                 </div>
                             </div>
                             <div class="input-field">
@@ -46,7 +46,7 @@
                                 <div id="input-container">
                                     <input type="text" id="mobile-number" placeholder="Eg. 9344068129">
                                     <span class="material-icons">error_outline</span>
-                                    <div class="error-field"> is not valid !!</div>
+                                    <div class="error-field">mobile number is not valid !!</div>
                                 </div>
                             </div>
                         </div>
@@ -54,8 +54,38 @@
                     <div class="group" id="password-and-pin">
                         <h2>Password & Pin</h2>
                         <div id="input-group">
-                            <div class="input-fields">
-                                
+                            <div class="input-field" id="password-field">
+                                <label for="">Password</label>
+                                <div id="input-container">
+                                    <hr>
+                                    <div id="password-container">
+                                        <input type="password" id="password" placeholder="Enter your Password">
+                                        <span class="material-icons" id="password-state-icon">error_outline</span>
+                                        <span class="material-icons" id="password-visibility-icon">visibility_off</span>
+                                        <div id="tooltip">
+                                            <p id="min-8-characters">
+                                                <span class="material-icons">info_outline</span>  Minimum 8 characters
+                                            </p>
+                                            <p id="1-special-character">
+                                                <span class="material-icons">info_outline</span>  At
+                                                least 1 Special character
+                                            </p>
+                                            <p id="1-number">
+                                                <span class="material-icons">info_outline</span>  At
+                                                least 1 Number
+                                            </p>
+                                            <p id="1-uppercase">
+                                                <span class="material-icons">info_outline</span>  At
+                                                least 1 Uppercase
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="confirm-password-container">
+                                        <input type="password" id="confirm-password" placeholder="Re-enter your password">
+                                        <span class="material-icons">error_outline</span>
+                                        <div class="error-field">passwords should match !!</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="input-fields"></div>
                         </div>

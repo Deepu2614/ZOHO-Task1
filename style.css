@@ -82,7 +82,7 @@ body {
 }
 
 /* /input */
-#input-container>input{
+#input-container input{
     padding: 0.5vw 0.8vw;
     width: 100%;
     outline: none;
@@ -95,30 +95,67 @@ body {
     background-color: rgb(255 255 255 / 15%);
 }
 
-#input-container>input:focus{
+#input-container input:focus{
     border: 1px solid #4444444f;
     background-color: rgb(214, 214, 214);
 }
-#input-container>input:hover{
+#input-container input:hover{
     cursor: text;
     background-color: rgba(214, 214, 214, 0.878);
 }
 /* /input */
 
-#input-container>span{
+/* /password input */
+#password-and-pin #input-container input#password{
+    border-radius: 5px 5px 0px 0px;
+    position: relative;
+}
+
+#password-and-pin #input-container input#confirm-password{
+    position: absolute;
+    bottom: -99%;
+    left: 0%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#password-and-pin #input-container>hr{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    z-index: 1;
+}
+
+#password-field{
+    margin-bottom: 2vw;
+}
+
+/* /password input */
+
+#input-container span{
     font-size: 17px;
     position: absolute;
     top: 30%;
     right: 3%;
-    visibility: hidden;
+    /* visibility: hidden; */
+}
+#password-and-pin #input-container span{
+    top: 130%;
+}
+#password-and-pin #input-container span#password-visibility-icon,
+#password-and-pin #input-container span#password-state-icon{
+    top: 30%;
 }
 
-#input-container>.error-field{
+
+#input-container .error-field{
     font-size: 12px;
     position: absolute;
     bottom: -50%;
     right: 0%;
-    visibility: hidden;
+    /* visibility: hidden; */
+}
+#password-and-pin #input-container .error-field{
+    bottom: -150%;
 }
 
 #main>form>button{
@@ -148,3 +185,50 @@ body {
 #main>form>button:active{
     box-shadow: none;
 }
+
+hr{
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid #999;
+}
+
+/* /tooltip */
+
+#password-container>#tooltip {
+    gap: 0.2vw;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    right: -42.5%;
+    top: -48%;
+    padding: 1vw;
+    background-color: #e4e4e4;
+    color: rgb(122, 122, 122);
+    font-size: 0.6vw;
+    border-radius: 0.5vw;
+}
+
+#password-container>#tooltip::before {
+    position: absolute;
+    content: "";
+    background-color: #e4e4e4;
+    height: 0.5vw;
+    width: 0.5vw;
+    left: 0%;
+    top: 30%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+#tooltip>p {
+    display: flex;
+    gap: 0.2vw;
+    align-items: center;
+}
+
+#tooltip>p>span{
+    position: relative;
+}
+
+
+
+/* /tooltip */
