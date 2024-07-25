@@ -87,15 +87,53 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="input-fields"></div>
+                            <div id="pin-input-field">
+                                <div class="input-field">
+                                    <label for="" id="pin-label">Pin</label>
+                                    <div id="input-container" class="pin">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin1">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin2">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin3">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin4">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin5">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin6">
+                                        <div class="error-field" id="pin-error-field">Invalid Pin !!</div>  
+                                        <span class="material-icons" id="pin-visibility-icon">visibility_off</span>
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <label for="" id="pin-label">Confirm Pin</label>
+                                    <div id="input-container" class="pin">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="confirm-pin" class="confirm-pin" maxlength="1" id="confirm-pin1">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="confirm-pin" class="confirm-pin" maxlength="1" id="confirm-pin2">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="confirm-pin" class="confirm-pin" maxlength="1" id="confirm-pin3">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="confirm-pin" class="confirm-pin" maxlength="1" id="confirm-pin4">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="confirm-pin" class="confirm-pin" maxlength="1" id="confirm-pin5">
+                                        <input placeholder="⋆" type="tel" autocomplete="off" name="confirm-pin" class="confirm-pin" maxlength="1" id="confirm-pin6">
+                                        <div class="error-field" id="confirm-pin-error-field">Pin should match !!</div>
+                                        <span class="material-icons" id="pin-validation-icon">check_circle_outline</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <button disabled>Sign-up</button>
             </form>
         </div>
-        <div id="divider"></div>
-        <div id="footer"></div>
+        <div class="divider">
+            <hr class="left" />
+            <p>or</p>
+            <hr class="right" />
+        </div>
+        <div class="footer">
+            <h3 id="login-title">Already an user?</h3>
+            <p class="para">
+                Use your login credentials to signin.
+                <a href="login.html"><span>Login</span></a>
+            </p>
+        </div>
     </div>
+    <script type="module" src="signup.js"></script>
 </body>
 </html>
