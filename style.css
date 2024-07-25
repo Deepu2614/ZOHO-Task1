@@ -103,12 +103,32 @@ body {
     cursor: text;
     background-color: rgba(214, 214, 214, 0.878);
 }
+#input-container[data-mode = "warning"] input{
+    border: 1px solid rgba(185, 150, 37, 0.323);
+}
+#input-container[data-mode = "error"] input{
+    border: 1px solid rgba(159, 21, 21, 0.558);
+}
+
+#input-container[data-mode = "error"] input[type="date"]::-webkit-calendar-picker-indicator,
+#input-container[data-mode = "valid"] input[type="date"]::-webkit-calendar-picker-indicator{
+    position: absolute;
+    cursor: pointer;
+    right: 40px;
+    transition-timing-function: ease-in;
+}
+
 /* /input */
 
 /* /password input */
 #password-and-pin #input-container input#password{
     border-radius: 5px 5px 0px 0px;
     position: relative;
+}
+
+#password-and-pin #password-container[data-mode="error"] input#password,
+#password-and-pin #confirm-password-container[data-mode="error"] input#confirm-password{
+    border: 1px solid rgba(159, 21, 21, 0.558);
 }
 
 #password-and-pin #input-container input#confirm-password{
@@ -122,7 +142,11 @@ body {
     position: absolute;
     bottom: 0%;
     left: 0%;
-    z-index: 1;
+    z-index: 0;
+}
+#password-and-pin #password-container[data-mode="error"]+hr{
+    z-index: 2;
+    border-color: rgba(159, 21, 21, 0.558);
 }
 
 #password-field{
@@ -132,23 +156,53 @@ body {
 /* /password input */
 
 #input-container span{
-    font-size: 17px;
+    font-size: 15px;
     position: absolute;
     top: 30%;
     right: 3%;
     visibility: hidden;
 }
+#input-container[data-mode="error"] span{
+    visibility: visible;
+    color: rgba(159, 21, 21, 0.558);
+}
+#input-container[data-mode="warning"] span{
+    visibility: visible;
+    color: rgba(185, 150, 37, 0.877);
+}
+#input-container[data-mode="valid"] span{
+    visibility: visible;
+    color: rgba(21, 159, 28, 0.806);
+}
+
 #password-and-pin #input-container span{
     top: 130%;
 }
+
 #password-and-pin #input-container span#password-visibility-icon,
 #password-and-pin #input-container span#password-state-icon{
     top: 30%;
 }
 
+#password-and-pin #password-container[data-mode="valid"] span#password-state-icon,
+#password-and-pin #confirm-password-container[data-mode="valid"] span#confirm-password-state-icon{
+    visibility: visible;
+    color: rgba(21, 159, 28, 0.806);
+}
+#password-and-pin #password-container[data-mode="error"] span#password-state-icon,
+#password-and-pin #confirm-password-container[data-mode="error"] span#confirm-password-state-icon{
+    visibility: visible;
+    color: rgba(159, 21, 21, 0.558);
+}
+
 #password-and-pin #input-container span#password-visibility-icon{
     visibility: visible;
     cursor: pointer;
+}
+
+#password-and-pin #password-container[data-mode="valid"] span#password-visibility-icon,
+#password-and-pin #password-container[data-mode="error"] span#password-visibility-icon{
+    right: 8%;
 }
 
 
@@ -159,6 +213,15 @@ body {
     right: 0%;
     visibility: hidden;
 }
+#input-container[data-mode="warning"]:focus-within .error-field{
+    visibility: visible;
+    color: rgba(185, 150, 37, 0.877);
+}
+#input-container[data-mode="error"]:focus-within .error-field{
+    visibility: visible;
+    color: rgba(159, 21, 21, 0.558);
+}
+
 #password-and-pin #input-container .error-field{
     bottom: -150%;
 }
@@ -202,15 +265,15 @@ hr{
 /* /tooltip */
 
 #password-container>#tooltip {
-    gap: 0.2vw;
+    gap: 0.4vw;
     flex-direction: column;
     display: flex;
     position: absolute;
     /* right: -42.5%; */
     right: -40%;
     visibility: hidden;
-    top: -48%;
-    padding: 1vw;
+    top: -62%;
+    padding: 1.2vw;
     background-color: #e4e4e4;
     color: rgb(122, 122, 122);
     font-size: 0.6vw;
@@ -239,6 +302,13 @@ hr{
     display: flex;
     gap: 0.2vw;
     align-items: center;
+}
+
+#tooltip>p[data-mode="valid"]{
+    color: rgba(21, 159, 28, 0.806);
+}
+#tooltip>p[data-mode="warning"]{
+    color: rgba(185, 150, 37, 0.877);
 }
 
 #tooltip>p>span{
@@ -276,10 +346,17 @@ hr{
     top: -60%;
     right: 0%;
     cursor: pointer;
+    visibility: hidden;
+}
+
+#password-and-pin #input-container[data-mode="valid"] #pin-validation-icon{
+    color: rgba(21, 159, 28, 0.806);
+    visibility: visible;
 }
 
 #password-and-pin #input-container>#pin-visibility-icon{
     visibility: visible;
+    color: #212121;
 }
 
 .pin{
@@ -336,3 +413,54 @@ hr{
 }
 
 /* /footer */
+
+
+/* login------------------------------------------------------------------------------------------------------------------------------------- */
+/* login------------------------------------------------------------------------------------------------------------------------------------- */
+/* login------------------------------------------------------------------------------------------------------------------------------------- */
+/* login------------------------------------------------------------------------------------------------------------------------------------- */
+/* login------------------------------------------------------------------------------------------------------------------------------------- */
+
+#login{
+    height: 100vh;
+    align-items: center;
+}
+
+#login>#container{
+    width: 24%;
+}
+
+#options input[type="radio"]{
+    accent-color: #353535;
+    width: 1vw;
+    height: .6vw;
+}
+
+#input-container>#password-visibility-icon{
+    visibility: visible;
+    cursor: pointer;
+}
+
+#input-container.pin{
+    display: flex;
+    justify-content: space-between;
+}
+
+#input-container.pin input {
+    width: 12%;
+    padding: 0.5vw 0.5vw;
+    text-align: center;
+}
+
+#input-container #pin-visibility-icon{
+    visibility: visible;
+    top: -55%;
+    color: #212121;
+    cursor: pointer;
+
+}
+
+#login-credential[data-mode="password"] #input-container.pin,
+#login-credential[data-mode="pin"] #input-container.password{
+    display: none;
+}

@@ -88,7 +88,7 @@ class Validator {
         return isVisited["password"] && !isValid.password;
     }
     isAllInputsValid(isValid) {
-        return isValid.username && isValid.email && isValid.dob && isValid.phonenumber && isValid.password && isValid.confirmpassword && isValid.pin && isValid.confirmpin;
+        return isValid["full-name"] && isValid["email"] && isValid["date-of-birth"] && isValid["mobile-number"] && isValid["password"] && isValid["confirm-password"] && isValid.pin && isValid.confirmpin;
     }
 
     isLoginEmailInErrorState(event){

@@ -11,22 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
 class DOMManipulator {
     constructor() {
         this.domElements = {
-            "username": document.getElementById("username"),
+            "username": document.getElementById("full-name"),
             "email": document.getElementById("email"),
-            "dob": document.getElementById("dob"),
-            "phonenumber": document.getElementById("phonenumber"),
+            "dob": document.getElementById("date-of-birth"),
+            "phonenumber": document.getElementById("mobile-number"),
             "password": document.querySelector("#password"),
-            "confirmpassword": document.querySelector("#confirmpassword"),
-            "togglePasswordVisibilityButton": document.querySelector("#togglePassword"),
-            "togglePinVisibilityButton": document.querySelector("#togglePin"),
+            "confirmpassword": document.querySelector("#confirm-password"),
+            "togglePasswordVisibilityButton": document.querySelector("#password-visibility-icon"),
+            "togglePinVisibilityButton": document.querySelector("#pin-visibility-icon"),
             "pinInputs": document.querySelectorAll("input.pin"),
             "confirmPinInputs": document.querySelectorAll("input.confirm-pin"),
             "minimum8CharactersIcon": document.querySelector("#min-8-characters"),
             "atLeastOneSpecialCharIcon": document.querySelector("#\\31-special-character"),
             "atLeastOneNumberIcon": document.querySelector("#\\31-number"),
             "atLeastOneUppercaseIcon": document.querySelector("#\\31-uppercase"),
-            "form": document.querySelector('#outer-container form'),
-            "submitButton": document.querySelector("button#submitbutton"),
+            "form": document.querySelector('#container form'),
+            "submitButton": document.querySelector("button"),
         }
 
         this.pinValues = null;
@@ -37,22 +37,22 @@ class DOMManipulator {
         this.isAtleast1SpecialCharReached = false;
         
         this.isValid = { 
-            username: false,
-            email: false,
-            dob: false,
-            phonenumber: false,
-            password: false,
-            confirmpassword: false,
+            "full-name": false,
+            "email": false,
+            "date-of-birth": false,
+            "mobile-number": false,
+            "password": false,
+            "confirm-password": false,
             pin: false,
             confirmpin: false
         }
         this.visited = {
-            username: false,
-            email: false,
-            dob: false,
-            phonenumber: false,
-            password: false,
-            confirmpassword: false,
+            "full-name": false,
+            "email": false,
+            "date-of-birth": false,
+            "mobile-number": false,
+            "password": false,
+            "confirm-password": false,
             pin: false,
             confirmpin: false
         }
@@ -223,10 +223,10 @@ class DOMManipulator {
                 this.markPasswordFieldsAsValid(event);
             }
             else if(this.validator.isPasswordVisitedAndInErrorState(this.visited, this.isValid)){ 
-                event.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = "Password should be valid !!";
+                event.target.nextElementSibling.nextElementSibling.innerHTML = "Password should be valid !!";
             }
             else{  
-                event.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = "Password doesn't match !!";
+                event.target.nextElementSibling.nextElementSibling.innerHTML = "Password doesn't match !!";
             }
             this.checkFormValidity();
         })
@@ -373,7 +373,7 @@ class DOMManipulator {
 
     markPasswordFieldsAsValid(event) {
         event.target.parentNode.dataset["mode"] = "valid";
-        event.target.nextElementSibling.nextElementSibling.innerHTML = "check_circle_outline";
+        event.target.id === "password"?event.target.nextElementSibling.nextElementSibling.innerHTML = "check_circle_outline":event.target.nextElementSibling.innerHTML = "check_circle_outline";
         this.isValid[event.target.id] = true;
     }
 
@@ -407,26 +407,23 @@ class DOMManipulator {
         const isPassword = inputField.type === "password";
         this.isPasswordTogglePressed = true;
         inputField.type = isPassword ? "text" : "password";
-        toggleButton.classList.toggle("bi-eye", isPassword);
-        toggleButton.classList.toggle("bi-eye-slash", !isPassword);
+        toggleButton.innerHTML = isPassword ? "visibility" : "visibility_off";
         (this.visited["password"] && inputField.parentNode.dataset["mode"] === "info")?this.isPasswordInInfoState = true:this.isPasswordInInfoState = false;
     }
     
 
     togglePinVisibility(toggleButton, inputField) {
         this.isPinTogglePressed = true;
-        if(toggleButton.classList.contains("bi-eye-slash")){
+        if(toggleButton.innerHTML === "visibility_off"){
             inputField.forEach((input, index) => {
                 input.type = "tel";
             });
-            toggleButton.classList.add("bi-eye"); 
-            toggleButton.classList.remove("bi-eye-slash");
+            toggleButton.innerHTML = "visibility";
         }else{
             inputField.forEach((input, index) => {
                 input.type = "password";
             });
-            toggleButton.classList.add("bi-eye-slash");
-            toggleButton.classList.remove("bi-eye");
+            toggleButton.innerHTML = "visibility_off";
         }
     }
 

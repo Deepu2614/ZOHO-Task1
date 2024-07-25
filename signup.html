@@ -20,7 +20,7 @@
                             <div class="input-field">
                                 <label for="">Full name</label>
                                 <div id="input-container">
-                                    <input type="text" id="full-name" placeholder="Eg. Your Name">
+                                    <input type="text" id="full-name" placeholder="Eg. Your Name" autocomplete="off">
                                     <span class="material-icons">error_outline</span>
                                     <div class="error-field">full name is not valid !!</div>
                                 </div>
@@ -28,7 +28,7 @@
                             <div class="input-field">
                                 <label for="">Email</label>
                                 <div id="input-container">
-                                    <input type="email" id="email" placeholder="Eg. your.mail.id@email.com">
+                                    <input type="email" id="email" placeholder="Eg. your.mail.id@email.com" autocomplete="off">
                                     <span class="material-icons">error_outline</span>
                                     <div class="error-field">email is not valid !!</div>
                                 </div>
@@ -36,7 +36,7 @@
                             <div class="input-field">
                                 <label for="">Date of birth</label>
                                 <div id="input-container">
-                                    <input type="date" id="date-of-birth">
+                                    <input type="date" id="date-of-birth" autocomplete="off">
                                     <span class="material-icons">error_outline</span>
                                     <div class="error-field">date is not valid !!</div>
                                 </div>
@@ -44,7 +44,7 @@
                             <div class="input-field">
                                 <label for="">Mobile number</label>
                                 <div id="input-container">
-                                    <input type="text" id="mobile-number" placeholder="Eg. 9344068129">
+                                    <input type="text" id="mobile-number" placeholder="Eg. 9344068129" maxlength="10" autocomplete="off">
                                     <span class="material-icons">error_outline</span>
                                     <div class="error-field">mobile number is not valid !!</div>
                                 </div>
@@ -57,11 +57,10 @@
                             <div class="input-field" id="password-field">
                                 <label for="">Password</label>
                                 <div id="input-container">
-                                    <hr>
                                     <div id="password-container">
-                                        <input type="password" id="password" placeholder="Enter your Password">
+                                        <input type="password" id="password" placeholder="Enter your Password" autocomplete="off">
+                                        <span class="material-icons" id="password-visibility-icon">visibility</span>
                                         <span class="material-icons" id="password-state-icon">error_outline</span>
-                                        <span class="material-icons" id="password-visibility-icon">visibility_off</span>
                                         <div id="tooltip">
                                             <p id="min-8-characters">
                                                 <span class="material-icons">info_outline</span>  Minimum 8 characters
@@ -80,9 +79,10 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <hr>
                                     <div id="confirm-password-container">
-                                        <input type="password" id="confirm-password" placeholder="Re-enter your password">
-                                        <span class="material-icons">error_outline</span>
+                                        <input type="password" id="confirm-password" placeholder="Re-enter your password" autocomplete="off">
+                                        <span class="material-icons" id="confirm-password-state-icon">error_outline</span>
                                         <div class="error-field">passwords should match !!</div>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                         <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin5">
                                         <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin6">
                                         <div class="error-field" id="pin-error-field">Invalid Pin !!</div>  
-                                        <span class="material-icons" id="pin-visibility-icon">visibility_off</span>
+                                        <span class="material-icons" id="pin-visibility-icon">visibility</span>
                                     </div>
                                 </div>
                                 <div class="input-field">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <button disabled>Sign-up</button>
+                <button type="submit" disabled>Sign-up</button>
             </form>
         </div>
         <div class="divider">

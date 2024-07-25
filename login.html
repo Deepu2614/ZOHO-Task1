@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body id="login">
+    <div id="container">
+        <div id="main">
+            <h1>Login</h1>
+            <form>
+                <div id="content">
+                    <div class="group" id="personal-information">
+                        <!-- <h2>Personal Information</h2> -->
+                        <div id="input-group">
+                            <div class="input-field">
+                                <label for="">Email</label>
+                                <div id="input-container">
+                                    <input type="email" id="email" placeholder="Eg. your.mail.id@email.com" autocomplete="off">
+                                    <span class="material-icons">error_outline</span>
+                                    <div class="error-field">email is not valid !!</div>
+                                </div>
+                            </div>
+                            <div class="input-field" id="login-credential" data-mode="password">
+                                <div id="options">
+                                    <label for="option-password"><input type="radio" name="preference" id="option-password" checked><span>Password</span></label>
+                                    <label for="option-pin"><input type="radio" name="preference" id="option-pin"><span>Pin</span></label>
+                                </div>
+                                <div id="input-container" class="password">
+                                    <input type="password" id="password" placeholder="Enter your password" autocomplete="off">
+                                    <span class="material-icons" id="password-visibility-icon">visibility</span>
+                                </div>
+                                <div id="input-container" class="pin">
+                                    <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin1">
+                                    <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin2">
+                                    <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin3">
+                                    <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin4">
+                                    <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin5">
+                                    <input placeholder="⋆" type="tel" autocomplete="off" name="pin" class="pin" maxlength="1" id="pin6">
+                                    <div class="error-field" id="pin-error-field">Invalid Pin !!</div>  
+                                    <span class="material-icons" id="pin-visibility-icon">visibility</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" disabled>Login</button>
+            </form>
+        </div>
+        <div class="divider">
+            <hr class="left" />
+            <p>or</p>
+            <hr class="right" />
+        </div>
+        <div class="footer">
+            <h3 id="login-title">New here?</h3>
+            <p class="para">
+                Create your profile to signup.
+                <a href="signup.html"><span>Sign-up</span></a>
+            </p>
+        </div>
+    </div>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
