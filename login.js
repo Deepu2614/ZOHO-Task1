@@ -206,7 +206,7 @@ class DOMManipulator {
         const isPassword = inputField.type === "password";
         this.isPasswordTogglePressed = true;
         inputField.type = isPassword ? "text" : "password";
-        toggleButton.innerHTML = isPassword ? "visibility_off" : "visibility";
+        toggleButton.innerHTML = isPassword ? "visibility" : "visibility_off";
     }
 
     togglePinVisibility(toggleButton, inputField) {
@@ -232,7 +232,7 @@ class DOMManipulator {
             event.target.value = event.key;
         }
         setTimeout(() => {
-            if(this.domElements.togglePinVisibilityButton.classList.contains("bi-eye-slash")){
+            if(this.domElements.togglePinVisibilityButton.innerHTML === "visibility_off"){
                 event.target.type = "password";
             }
         }, 350)

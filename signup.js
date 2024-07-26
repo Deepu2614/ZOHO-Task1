@@ -433,7 +433,7 @@ class DOMManipulator {
             event.target.value = event.key;
         }
         setTimeout(() => {
-            if(this.domElements.togglePinVisibilityButton.classList.contains("bi-eye-slash")){
+            if(this.domElements.togglePinVisibilityButton.innerHTML == "visibility_off"){
                 event.target.type = "password";
             }
         }, 350)
